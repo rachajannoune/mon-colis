@@ -17,6 +17,7 @@ L’application aura pour fonctionnalités :
 - Vue 3
 - TypeScript
 - Nitro
+- ESLint
 
 ## Environnement
 
