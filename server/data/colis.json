@@ -1,0 +1,222 @@
+[
+  {
+    "numero": "LA123456789FR",
+    "statut": "en_transit",
+    "destinataire": {
+      "adresse": "12 rue Victor Hugo",
+      "ville": "Meaux",
+      "codePostal": "77100"
+    },
+    "dateLivraisonPrevue": "2026-10-03",
+    "evenements": [
+      {
+        "date": "2026-09-29T08:12:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Roissy"
+      },
+      {
+        "date": "2026-09-30T06:40:00Z",
+        "libelle": "En transit",
+        "lieu": "Centre de tri Wissous"
+      }
+    ]
+  },
+  {
+    "numero": "LB987654321FR",
+    "statut": "pris_en_charge",
+    "destinataire": {
+      "adresse": "8 avenue de Paris",
+      "ville": "Créteil",
+      "codePostal": "94000"
+    },
+    "dateLivraisonPrevue": "2026-10-04",
+    "evenements": [
+      {
+        "date": "2026-10-01T09:15:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Bureau de poste Créteil"
+      }
+    ]
+  },
+  {
+    "numero": "LC456789123FR",
+    "statut": "en_cours_de_livraison",
+    "destinataire": {
+      "adresse": "21 rue des Lilas",
+      "ville": "Versailles",
+      "codePostal": "78000"
+    },
+    "dateLivraisonPrevue": "2026-10-02",
+    "evenements": [
+      {
+        "date": "2026-09-30T07:30:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Paris Sud"
+      },
+      {
+        "date": "2026-10-01T05:50:00Z",
+        "libelle": "En transit",
+        "lieu": "Centre de tri Versailles"
+      },
+      {
+        "date": "2026-10-02T07:10:00Z",
+        "libelle": "En cours de livraison",
+        "lieu": "Agence de distribution Versailles"
+      }
+    ]
+  },
+  {
+    "numero": "LD741852963FR",
+    "statut": "livre",
+    "destinataire": {
+      "adresse": "5 boulevard Voltaire",
+      "ville": "Paris",
+      "codePostal": "75011"
+    },
+    "dateLivraisonPrevue": "2026-10-01",
+    "evenements": [
+      {
+        "date": "2026-09-29T10:00:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Roissy"
+      },
+      {
+        "date": "2026-09-30T04:20:00Z",
+        "libelle": "En transit",
+        "lieu": "Centre de tri Paris"
+      },
+      {
+        "date": "2026-10-01T11:45:00Z",
+        "libelle": "Livré",
+        "lieu": "Paris 11e"
+      }
+    ]
+  },
+  {
+    "numero": "LE159357486FR",
+    "statut": "avis_de_passage",
+    "destinataire": {
+      "adresse": "14 rue de la République",
+      "ville": "Montreuil",
+      "codePostal": "93100"
+    },
+    "dateLivraisonPrevue": "2026-10-01",
+    "evenements": [
+      {
+        "date": "2026-09-29T06:55:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Nord"
+      },
+      {
+        "date": "2026-10-01T10:20:00Z",
+        "libelle": "Avis de passage déposé",
+        "lieu": "Montreuil"
+      }
+    ]
+  },
+  {
+    "numero": "LF258369147FR",
+    "statut": "en_transit",
+    "destinataire": {
+      "adresse": "33 avenue Jean Jaurès",
+      "ville": "Bobigny",
+      "codePostal": "93000"
+    },
+    "dateLivraisonPrevue": "2026-10-05",
+    "evenements": [
+      {
+        "date": "2026-10-01T08:00:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Bureau de poste Bobigny"
+      },
+      {
+        "date": "2026-10-02T03:30:00Z",
+        "libelle": "En transit",
+        "lieu": "Plateforme Île-de-France"
+      }
+    ]
+  },
+  {
+    "numero": "LG369258147FR",
+    "statut": "livre",
+    "destinataire": {
+      "adresse": "9 rue Pasteur",
+      "ville": "Nanterre",
+      "codePostal": "92000"
+    },
+    "dateLivraisonPrevue": "2026-09-30",
+    "evenements": [
+      {
+        "date": "2026-09-28T09:10:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Ouest"
+      },
+      {
+        "date": "2026-09-30T13:15:00Z",
+        "libelle": "Livré",
+        "lieu": "Nanterre"
+      }
+    ]
+  },
+  {
+    "numero": "LH147258369FR",
+    "statut": "pris_en_charge",
+    "destinataire": {
+      "adresse": "18 rue Nationale",
+      "ville": "Lille",
+      "codePostal": "59000"
+    },
+    "dateLivraisonPrevue": "2026-10-06",
+    "evenements": [
+      {
+        "date": "2026-10-02T08:25:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Bureau de poste Lille Centre"
+      }
+    ]
+  },
+  {
+    "numero": "LI963852741FR",
+    "statut": "en_cours_de_livraison",
+    "destinataire": {
+      "adresse": "7 quai de la Loire",
+      "ville": "Lyon",
+      "codePostal": "69002"
+    },
+    "dateLivraisonPrevue": "2026-10-02",
+    "evenements": [
+      {
+        "date": "2026-09-30T12:40:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Lyon"
+      },
+      {
+        "date": "2026-10-02T06:45:00Z",
+        "libelle": "En cours de livraison",
+        "lieu": "Agence de distribution Lyon"
+      }
+    ]
+  },
+  {
+    "numero": "LJ321654987FR",
+    "statut": "avis_de_passage",
+    "destinataire": {
+      "adresse": "25 rue Sainte-Catherine",
+      "ville": "Bordeaux",
+      "codePostal": "33000"
+    },
+    "dateLivraisonPrevue": "2026-10-02",
+    "evenements": [
+      {
+        "date": "2026-09-30T07:00:00Z",
+        "libelle": "Pris en charge",
+        "lieu": "Plateforme Bordeaux"
+      },
+      {
+        "date": "2026-10-02T09:50:00Z",
+        "libelle": "Avis de passage déposé",
+        "lieu": "Bordeaux Centre"
+      }
+    ]
+  }
+]

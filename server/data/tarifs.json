@@ -1,0 +1,18 @@
+{
+  "lettre": [
+    { "poidsMaxG": 20, "prix": 1.50 },
+    { "poidsMaxG": 100, "prix": 2.50 },
+    { "poidsMaxG": 250, "prix": 4.00 }
+  ],
+  "colis": [
+    { "poidsMaxG": 250, "prix": 5.00 },
+    { "poidsMaxG": 1000, "prix": 7.50 },
+    { "poidsMaxG": 5000, "prix": 12.00 }
+  ],
+  "majorationDestination": {
+    "france": 1,
+    "ue": 1.8,
+    "monde": 2.6
+  },
+  "optionSuivi": 1.50
+}

@@ -1,0 +1,259 @@
+[
+  {
+    "id": "bp-77100-01",
+    "nom": "Meaux Centre",
+    "adresse": "12 rue du Marché",
+    "ville": "Meaux",
+    "codePostal": "77100",
+    "services": ["retrait", "affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["09:00-12:00", "14:00-18:00"],
+      "mardi": ["09:00-12:00", "14:00-18:00"],
+      "mercredi": ["09:00-12:00", "14:00-18:00"],
+      "jeudi": ["09:00-12:00", "14:00-18:00"],
+      "vendredi": ["09:00-12:00", "14:00-18:00"],
+      "samedi": ["09:00-12:30"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-77100-02",
+    "nom": "Meaux République",
+    "adresse": "8 avenue de la République",
+    "ville": "Meaux",
+    "codePostal": "77100",
+    "services": ["retrait", "affranchissement"],
+    "horaires": {
+      "lundi": ["08:30-12:30", "13:30-17:30"],
+      "mardi": ["08:30-12:30", "13:30-17:30"],
+      "mercredi": ["08:30-12:30", "13:30-17:30"],
+      "jeudi": ["08:30-12:30", "13:30-17:30"],
+      "vendredi": ["08:30-12:30", "13:30-17:30"],
+      "samedi": ["09:00-12:00"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-77100-03",
+    "nom": "Meaux Saint-Faron",
+    "adresse": "24 rue Saint-Faron",
+    "ville": "Meaux",
+    "codePostal": "77100",
+    "services": ["retrait"],
+    "horaires": {
+      "lundi": ["09:00-17:00"],
+      "mardi": ["09:00-17:00"],
+      "mercredi": ["09:00-17:00"],
+      "jeudi": ["09:00-17:00"],
+      "vendredi": ["09:00-17:00"],
+      "samedi": ["09:00-12:00"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-77100-04",
+    "nom": "Meaux Beauval",
+    "adresse": "15 avenue de l'Appel du 18 Juin",
+    "ville": "Meaux",
+    "codePostal": "77100",
+    "services": ["affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["09:30-12:00", "14:00-18:00"],
+      "mardi": ["09:30-12:00", "14:00-18:00"],
+      "mercredi": ["09:30-12:00", "14:00-18:00"],
+      "jeudi": ["09:30-12:00", "14:00-18:00"],
+      "vendredi": ["09:30-12:00", "14:00-18:00"],
+      "samedi": ["09:00-12:30"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-77100-05",
+    "nom": "Meaux Gare",
+    "adresse": "3 place de la Gare",
+    "ville": "Meaux",
+    "codePostal": "77100",
+    "services": ["retrait", "affranchissement"],
+    "horaires": {
+      "lundi": ["08:00-18:00"],
+      "mardi": ["08:00-18:00"],
+      "mercredi": ["08:00-18:00"],
+      "jeudi": ["08:00-18:00"],
+      "vendredi": ["08:00-18:00"],
+      "samedi": ["09:00-13:00"],
+      "dimanche": []
+    }
+  },
+
+  {
+    "id": "bp-94000-01",
+    "nom": "Créteil Centre",
+    "adresse": "10 rue du Général Leclerc",
+    "ville": "Créteil",
+    "codePostal": "94000",
+    "services": ["retrait", "affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["09:00-18:00"],
+      "mardi": ["09:00-18:00"],
+      "mercredi": ["09:00-18:00"],
+      "jeudi": ["09:00-18:00"],
+      "vendredi": ["09:00-18:00"],
+      "samedi": ["09:00-12:30"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-94000-02",
+    "nom": "Créteil Université",
+    "adresse": "21 avenue des Étudiants",
+    "ville": "Créteil",
+    "codePostal": "94000",
+    "services": ["retrait", "affranchissement"],
+    "horaires": {
+      "lundi": ["08:30-17:30"],
+      "mardi": ["08:30-17:30"],
+      "mercredi": ["08:30-17:30"],
+      "jeudi": ["08:30-17:30"],
+      "vendredi": ["08:30-17:30"],
+      "samedi": [],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-94000-03",
+    "nom": "Créteil Préfecture",
+    "adresse": "5 place de la Préfecture",
+    "ville": "Créteil",
+    "codePostal": "94000",
+    "services": ["retrait", "banque"],
+    "horaires": {
+      "lundi": ["09:00-12:30", "13:30-17:00"],
+      "mardi": ["09:00-12:30", "13:30-17:00"],
+      "mercredi": ["09:00-12:30", "13:30-17:00"],
+      "jeudi": ["09:00-12:30", "13:30-17:00"],
+      "vendredi": ["09:00-12:30", "13:30-17:00"],
+      "samedi": [],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-94000-04",
+    "nom": "Créteil Village",
+    "adresse": "30 rue du Village",
+    "ville": "Créteil",
+    "codePostal": "94000",
+    "services": ["affranchissement"],
+    "horaires": {
+      "lundi": ["09:00-12:00", "14:00-17:30"],
+      "mardi": ["09:00-12:00", "14:00-17:30"],
+      "mercredi": ["09:00-12:00", "14:00-17:30"],
+      "jeudi": ["09:00-12:00", "14:00-17:30"],
+      "vendredi": ["09:00-12:00", "14:00-17:30"],
+      "samedi": ["09:00-12:00"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-94000-05",
+    "nom": "Créteil Lac",
+    "adresse": "4 avenue du Lac",
+    "ville": "Créteil",
+    "codePostal": "94000",
+    "services": ["retrait", "affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["10:00-18:30"],
+      "mardi": ["10:00-18:30"],
+      "mercredi": ["10:00-18:30"],
+      "jeudi": ["10:00-18:30"],
+      "vendredi": ["10:00-18:30"],
+      "samedi": ["10:00-17:00"],
+      "dimanche": []
+    }
+  },
+
+  {
+    "id": "bp-75011-01",
+    "nom": "Paris Voltaire",
+    "adresse": "40 boulevard Voltaire",
+    "ville": "Paris",
+    "codePostal": "75011",
+    "services": ["retrait", "affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["08:30-18:30"],
+      "mardi": ["08:30-18:30"],
+      "mercredi": ["08:30-18:30"],
+      "jeudi": ["08:30-18:30"],
+      "vendredi": ["08:30-18:30"],
+      "samedi": ["09:00-13:00"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-75011-02",
+    "nom": "Paris Bastille",
+    "adresse": "18 rue de la Roquette",
+    "ville": "Paris",
+    "codePostal": "75011",
+    "services": ["retrait", "affranchissement"],
+    "horaires": {
+      "lundi": ["09:00-18:00"],
+      "mardi": ["09:00-18:00"],
+      "mercredi": ["09:00-18:00"],
+      "jeudi": ["09:00-18:00"],
+      "vendredi": ["09:00-18:00"],
+      "samedi": ["09:00-12:30"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-75011-03",
+    "nom": "Paris Oberkampf",
+    "adresse": "72 rue Oberkampf",
+    "ville": "Paris",
+    "codePostal": "75011",
+    "services": ["retrait", "banque"],
+    "horaires": {
+      "lundi": ["09:30-17:30"],
+      "mardi": ["09:30-17:30"],
+      "mercredi": ["09:30-17:30"],
+      "jeudi": ["09:30-17:30"],
+      "vendredi": ["09:30-17:30"],
+      "samedi": [],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-75011-04",
+    "nom": "Paris Charonne",
+    "adresse": "33 rue de Charonne",
+    "ville": "Paris",
+    "codePostal": "75011",
+    "services": ["affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["09:00-12:00", "14:00-18:00"],
+      "mardi": ["09:00-12:00", "14:00-18:00"],
+      "mercredi": ["09:00-12:00", "14:00-18:00"],
+      "jeudi": ["09:00-12:00", "14:00-18:00"],
+      "vendredi": ["09:00-12:00", "14:00-18:00"],
+      "samedi": ["09:00-12:00"],
+      "dimanche": []
+    }
+  },
+  {
+    "id": "bp-75011-05",
+    "nom": "Paris République",
+    "adresse": "6 avenue Parmentier",
+    "ville": "Paris",
+    "codePostal": "75011",
+    "services": ["retrait", "affranchissement", "banque"],
+    "horaires": {
+      "lundi": ["08:00-19:00"],
+      "mardi": ["08:00-19:00"],
+      "mercredi": ["08:00-19:00"],
+      "jeudi": ["08:00-19:00"],
+      "vendredi": ["08:00-19:00"],
+      "samedi": ["09:00-14:00"],
+      "dimanche": []
+    }
+  }
+]
