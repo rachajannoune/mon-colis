@@ -6,6 +6,15 @@ const { $formatDate } = useNuxtApp()
 const numero = computed(() =>
   String(route.params.numero).trim().toUpperCase()
 )
+useSeoMeta({
+  title: () => `Suivi ${numero.value} | Mon Colis`,
+  description: () =>
+    `Consultez le statut et les étapes de livraison du colis ${numero.value}.`,
+  ogTitle: () => `Suivi ${numero.value} | Mon Colis`,
+  ogDescription: () =>
+    `Consultez le statut et les étapes de livraison du colis ${numero.value}.`,
+  ogType: 'website'
+})
 
 const {
   data: colis,

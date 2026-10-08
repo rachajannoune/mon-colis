@@ -3,6 +3,15 @@ definePageMeta({
   layout: 'auth'
 })
 
+useSeoMeta({
+  title: 'Connexion | Mon Colis',
+  description: 'Connectez-vous à votre espace personnel pour consulter et gérer vos colis suivis.',
+  ogTitle: 'Connexion | Mon Colis',
+  ogDescription: 'Connectez-vous à votre espace personnel pour consulter et gérer vos colis suivis.',
+  ogType: 'website',
+  robots: 'noindex, nofollow'
+})
+
 const route = useRoute()
 const authStore = useAuthStore()
 

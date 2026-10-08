@@ -4,6 +4,14 @@ import type {
   TypeEnvoi
 } from '~/types/shared'
 
+useSeoMeta({
+  title: 'Calculer un tarif | Mon Colis',
+  description: 'Estimez le prix de votre lettre ou de votre colis selon son poids, sa destination et l’option de suivi.',
+  ogTitle: 'Calculer un tarif | Mon Colis',
+  ogDescription: 'Estimez le prix de votre lettre ou de votre colis selon son poids, sa destination et l’option de suivi.',
+  ogType: 'website'
+})
+
 const { $formatPrice } = useNuxtApp()
 
 const typeEnvoi = ref<TypeEnvoi>('lettre')

@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import type { ServiceBureau } from '~/types/shared'
 
+useSeoMeta({
+  title: 'Trouver un bureau | Mon Colis',
+  description: 'Recherchez un bureau de poste par code postal et filtrez les résultats selon les services disponibles.',
+  ogTitle: 'Trouver un bureau | Mon Colis',
+  ogDescription: 'Recherchez un bureau de poste par code postal et filtrez les résultats selon les services disponibles.',
+  ogType: 'website'
+})
+
+
 const route = useRoute()
 const router = useRouter()
 

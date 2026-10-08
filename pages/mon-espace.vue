@@ -3,6 +3,15 @@ definePageMeta({
   middleware: 'auth'
 })
 
+useSeoMeta({
+  title: 'Mes colis suivis | Mon Colis',
+  description: 'Consultez, ajoutez et retirez les colis enregistrés dans votre espace personnel.',
+  ogTitle: 'Mes colis suivis | Mon Colis',
+  ogDescription: 'Consultez, ajoutez et retirez les colis enregistrés dans votre espace personnel.',
+  ogType: 'website',
+  robots: 'noindex, nofollow'
+})
+
 const authStore = useAuthStore()
 const { $formatDate } = useNuxtApp()
 

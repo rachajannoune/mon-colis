@@ -13,7 +13,7 @@ const {
   pending,
   error
 } = await useAsyncData<Bureau[]>(
-  'bureaux-detail',
+  `bureau-detail-${id.value}`,
   () => $fetch<Bureau[]>(
     `${config.public.apiBase}/bureaux`
   )
@@ -24,6 +24,30 @@ const bureau = computed(() =>
     bureauEnregistre => bureauEnregistre.id === id.value
   )
 )
+
+useSeoMeta({
+  title: () =>
+    bureau.value
+      ? `${bureau.value.nom} | Mon Colis`
+      : 'Bureau de poste | Mon Colis',
+
+  description: () =>
+    bureau.value
+      ? `Consultez l’adresse, les horaires et les services du bureau ${bureau.value.nom} à ${bureau.value.ville}.`
+      : 'Consultez les informations, les horaires et les services d’un bureau de poste.',
+
+  ogTitle: () =>
+    bureau.value
+      ? `${bureau.value.nom} | Mon Colis`
+      : 'Bureau de poste | Mon Colis',
+
+  ogDescription: () =>
+    bureau.value
+      ? `Consultez l’adresse, les horaires et les services du bureau ${bureau.value.nom} à ${bureau.value.ville}.`
+      : 'Consultez les informations, les horaires et les services d’un bureau de poste.',
+
+  ogType: 'website'
+})
 </script>
 
 <template>

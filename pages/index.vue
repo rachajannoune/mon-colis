@@ -1,4 +1,12 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Accueil | Mon Colis',
+  description: 'Suivez vos courriers et colis, recherchez un bureau de poste et estimez le tarif de votre prochain envoi.',
+  ogTitle: 'Accueil | Mon Colis',
+  ogDescription: 'Suivez vos courriers et colis, recherchez un bureau de poste et estimez le tarif de votre prochain envoi.',
+  ogType: 'website'
+})
+
 const numero = ref('')
 const erreur = ref('')
 
@@ -18,6 +26,7 @@ function suivreColis(): void {
   navigateTo(`/suivi/${numeroNormalise}`)
 }
 </script>
+
 
 <template>
   <div>
