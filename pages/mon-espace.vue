@@ -1,22 +1,16 @@
 <script setup lang="ts">
-// Exécute le middleware auth avant d’autoriser l’accès à la page.
 definePageMeta({
   middleware: 'auth'
 })
 
-// Récupère les informations de l’utilisateur depuis le store Pinia.
 const authStore = useAuthStore()
+const { $formatDate } = useNuxtApp()
 
-// Numéro saisi dans le formulaire d’ajout.
 const nouveauNumero = ref('')
-
-// Message d’erreur de validation côté frontend.
 const erreurValidation = ref('')
 
-// Format attendu : 2 lettres, 9 chiffres et 2 lettres.
 const formatNumero = /^[A-Z]{2}\d{9}[A-Z]{2}$/
 
-// Récupère la liste des colis et les actions du composable.
 const {
   colisSuivis,
   pending,
@@ -27,35 +21,27 @@ const {
   supprimerColis
 } = await useMesColis()
 
-// Valide le numéro puis demande son ajout au backend.
 async function soumettreAjout(): Promise<void> {
-  // Supprime les espaces et transforme les lettres en majuscules.
   const numeroNormalise = nouveauNumero.value
     .trim()
     .toUpperCase()
 
-  // Supprime une ancienne erreur de validation.
   erreurValidation.value = ''
 
-  // Vérifie le format avant d’appeler l’API.
   if (!formatNumero.test(numeroNormalise)) {
     erreurValidation.value
       = 'Le numéro doit contenir 2 lettres, 9 chiffres et 2 lettres.'
     return
   }
 
-  // Appelle POST /api/mes-colis grâce au composable.
   const ajoutReussi = await ajouterColis(numeroNormalise)
 
-  // Vide le champ uniquement après un ajout réussi.
   if (ajoutReussi) {
     nouveauNumero.value = ''
   }
 }
 
-// Demande au backend de retirer le colis sélectionné.
 async function retirerColis(numero: string): Promise<void> {
-  // Appelle DELETE /api/mes-colis grâce au composable.
   await supprimerColis(numero)
 }
 </script>
@@ -80,7 +66,6 @@ async function retirerColis(numero: string): Promise<void> {
       </p>
     </header>
 
-    <!-- Formulaire d’ajout d’un colis -->
     <form
       class="mb-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
       @submit.prevent="soumettreAjout"
@@ -119,7 +104,6 @@ async function retirerColis(numero: string): Promise<void> {
         </button>
       </div>
 
-      <!-- Erreur détectée avant l’appel API -->
       <p
         v-if="erreurValidation"
         id="erreur-ajout-colis"
@@ -129,7 +113,6 @@ async function retirerColis(numero: string): Promise<void> {
         {{ erreurValidation }}
       </p>
 
-      <!-- Erreur retournée pendant une action backend -->
       <p
         v-else-if="erreurAction"
         id="erreur-ajout-colis"
@@ -140,7 +123,6 @@ async function retirerColis(numero: string): Promise<void> {
       </p>
     </form>
 
-    <!-- Chargement initial avec GET /api/mes-colis -->
     <div
       v-if="pending"
       class="rounded-2xl border border-gray-200 bg-white p-8 text-center text-gray-600"
@@ -149,7 +131,6 @@ async function retirerColis(numero: string): Promise<void> {
       Chargement de vos colis...
     </div>
 
-    <!-- Erreur pendant le chargement initial -->
     <div
       v-else-if="error"
       class="rounded-2xl border border-red-200 bg-red-50 p-6"
@@ -164,7 +145,6 @@ async function retirerColis(numero: string): Promise<void> {
       </p>
     </div>
 
-    <!-- La requête fonctionne, mais aucun colis n’est enregistré -->
     <div
       v-else-if="colisSuivis.length === 0"
       class="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm"
@@ -195,7 +175,6 @@ async function retirerColis(numero: string): Promise<void> {
       </p>
     </div>
 
-    <!-- Liste des colis retournés par GET /api/mes-colis -->
     <div v-else>
       <div class="mb-6 flex items-center justify-between gap-4">
         <h2 class="text-2xl font-bold text-gray-900">
@@ -239,7 +218,7 @@ async function retirerColis(numero: string): Promise<void> {
               </dt>
 
               <dd class="mt-1 text-gray-900">
-                {{ colis.dateLivraisonPrevue }}
+                {{ $formatDate(colis.dateLivraisonPrevue) }}
               </dd>
             </div>
 
@@ -255,7 +234,6 @@ async function retirerColis(numero: string): Promise<void> {
             </div>
           </dl>
 
-          <!-- Actions disponibles pour ce colis -->
           <div class="mt-6 flex flex-wrap items-center gap-4">
             <NuxtLink
               :to="`/suivi/${colis.numero}`"

@@ -1,29 +1,21 @@
 <script setup lang="ts">
 import type { ServiceBureau } from '~/types/shared'
 
-// Permet de lire les paramètres présents dans l’URL.
 const route = useRoute()
-
-// Permet de modifier l’URL sans recharger complètement la page.
 const router = useRouter()
 
-// Liste des services acceptés par l’application.
 const servicesValides: ServiceBureau[] = [
   'retrait',
   'affranchissement',
   'banque'
 ]
 
-// Valeur du champ code postal.
-// Le champ est initialisé avec le code postal présent dans l’URL.
 const codePostal = ref(
   typeof route.query.codePostal === 'string'
     ? route.query.codePostal
     : ''
 )
 
-// Valeur du champ service.
-// Le service de l’URL est utilisé seulement s’il appartient à la liste autorisée.
 const service = ref<ServiceBureau | ''>(
   typeof route.query.service === 'string'
   && servicesValides.includes(route.query.service as ServiceBureau)
@@ -31,16 +23,12 @@ const service = ref<ServiceBureau | ''>(
     : ''
 )
 
-// Code postal réellement utilisé pour appeler l’API.
-// La valeur est recalculée automatiquement lorsque l’URL change.
 const codePostalRecherche = computed(() =>
   typeof route.query.codePostal === 'string'
     ? route.query.codePostal
     : ''
 )
 
-// Service réellement utilisé pour appeler l’API.
-// Une valeur absente ou inconnue est remplacée par une chaîne vide.
 const serviceRecherche = computed<ServiceBureau | ''>(() =>
   typeof route.query.service === 'string'
   && servicesValides.includes(route.query.service as ServiceBureau)
@@ -48,9 +36,6 @@ const serviceRecherche = computed<ServiceBureau | ''>(() =>
     : ''
 )
 
-// Maintient les champs du formulaire synchronisés avec l’URL.
-// Ce watch est utile lorsque l’utilisateur utilise les boutons
-// précédent ou suivant du navigateur.
 watch(
   [codePostalRecherche, serviceRecherche],
   ([nouveauCodePostal, nouveauService]) => {
@@ -59,10 +44,6 @@ watch(
   }
 )
 
-// Appelle GET /api/bureaux avec les filtres présents dans l’URL.
-// bureaux contient les résultats.
-// pending indique que la requête est en cours.
-// error contient l’erreur éventuelle.
 const {
   data: bureaux,
   pending,
@@ -72,13 +53,9 @@ const {
   serviceRecherche
 )
 
-// Fonction exécutée lors de l’envoi du formulaire.
 async function rechercherBureaux(): Promise<void> {
-  // Supprime les espaces autour du code postal.
   const codePostalNormalise = codePostal.value.trim()
 
-  // Met à jour les paramètres de l’URL.
-  // Les paramètres vides ne sont pas ajoutés.
   await router.push({
     query: {
       ...(codePostalNormalise && {

@@ -1,22 +1,13 @@
 <script setup lang="ts">
 import type { Bureau } from '~/types/shared'
 
-// Permet de récupérer l’identifiant du bureau présent dans l’URL.
 const route = useRoute()
-
-// Permet d’accéder au chemin public de l’API défini dans runtimeConfig.
 const config = useRuntimeConfig()
 
-// Récupère l’identifiant depuis la route dynamique /bureaux/[id].
-// String() garantit que la valeur utilisée est une chaîne.
 const id = computed(() =>
   String(route.params.id)
 )
 
-// Récupère tous les bureaux depuis le backend.
-// bureaux contient le résultat.
-// pending indique si la requête est en cours.
-// error contient l’erreur éventuelle.
 const {
   data: bureaux,
   pending,
@@ -28,8 +19,6 @@ const {
   )
 )
 
-// Recherche dans le tableau le bureau dont l’identifiant
-// correspond à celui présent dans l’URL.
 const bureau = computed(() =>
   bureaux.value?.find(
     bureauEnregistre => bureauEnregistre.id === id.value
@@ -47,7 +36,6 @@ const bureau = computed(() =>
       Retour aux bureaux
     </NuxtLink>
 
-    <!-- État affiché pendant l’appel au backend. -->
     <div
       v-if="pending"
       class="mt-8 rounded-xl border border-gray-200 bg-white p-8 text-center text-gray-600"
@@ -56,7 +44,6 @@ const bureau = computed(() =>
       Chargement du bureau...
     </div>
 
-    <!-- État affiché si l’appel à l’API échoue. -->
     <div
       v-else-if="error"
       class="mt-8 rounded-xl border border-red-200 bg-red-50 p-6"
@@ -71,10 +58,6 @@ const bureau = computed(() =>
       </p>
     </div>
 
-    <!--
-      Ce cas signifie que l’API a répondu correctement,
-      mais qu’aucun bureau ne possède l’identifiant demandé.
-    -->
     <div
       v-else-if="!bureau"
       class="mt-8 rounded-xl border border-gray-200 bg-white p-8 text-center"
@@ -88,12 +71,13 @@ const bureau = computed(() =>
       </p>
     </div>
 
-    <!-- Ce bloc est affiché uniquement si le bureau existe. -->
     <article
       v-else
       class="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
     >
-      <header class="border-b border-gray-200 bg-blue-900 px-6 py-8 text-white">
+      <header
+        class="border-b border-gray-200 bg-blue-900 px-6 py-8 text-white"
+      >
         <p class="text-sm font-bold uppercase tracking-wider text-blue-200">
           Bureau de poste
         </p>
@@ -107,17 +91,11 @@ const bureau = computed(() =>
           {{ bureau.codePostal }} {{ bureau.ville }}
         </address>
 
-        <!--
-          Le calcul dépend de l’heure locale du navigateur.
-          ClientOnly évite une différence entre le rendu serveur
-          et le rendu dans le navigateur.
-        -->
         <ClientOnly>
           <div class="mt-5">
             <BureauOuverture :horaires="bureau.horaires" />
           </div>
 
-          <!-- Affichage temporaire avant le montage côté client. -->
           <template #fallback>
             <div class="mt-5">
               <span
@@ -136,7 +114,6 @@ const bureau = computed(() =>
             Services disponibles
           </h2>
 
-          <!-- Un badge est créé pour chaque service du bureau. -->
           <ul class="mt-4 flex flex-wrap gap-2">
             <li
               v-for="serviceBureau in bureau.services"
@@ -153,10 +130,6 @@ const bureau = computed(() =>
             Horaires d’ouverture
           </h2>
 
-          <!--
-            jour contient lundi, mardi, etc.
-            creneaux contient les horaires correspondants.
-          -->
           <dl class="mt-4 divide-y divide-gray-200">
             <div
               v-for="(creneaux, jour) in bureau.horaires"
@@ -168,12 +141,10 @@ const bureau = computed(() =>
               </dt>
 
               <dd class="text-right text-gray-600">
-                <!-- Affiche les créneaux lorsqu’ils existent. -->
                 <span v-if="creneaux.length">
                   {{ creneaux.join(' / ') }}
                 </span>
 
-                <!-- Un tableau vide signifie que le bureau est fermé. -->
                 <span
                   v-else
                   class="font-medium text-red-700"

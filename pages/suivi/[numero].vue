@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
 
+const { $formatDate } = useNuxtApp()
+
 const numero = computed(() =>
   String(route.params.numero).trim().toUpperCase()
 )
@@ -88,7 +90,7 @@ watch(
           </dt>
 
           <dd class="mt-1 font-medium text-gray-900">
-            {{ colis.dateLivraisonPrevue }}
+            {{ $formatDate(colis.dateLivraisonPrevue) }}
           </dd>
         </div>
 

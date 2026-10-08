@@ -8,21 +8,15 @@ interface ReponseConnexion {
 }
 
 export const useAuthStore = defineStore('auth', () => {
-  // Informations publiques de l’utilisateur connecté.
   const utilisateur = ref<UtilisateurConnecte | null>(null)
-
-  // Cookie créé par le backend après une connexion réussie.
   const sessionToken = useCookie<string | null>('session_token')
 
-  // Indique si une session existe actuellement.
   const estConnecte = computed(() =>
     Boolean(sessionToken.value)
   )
 
-  // Indique si une requête de connexion est en cours.
   const pending = ref(false)
 
-  // Message affiché si la connexion échoue.
   const erreur = ref('')
 
   async function connecter(

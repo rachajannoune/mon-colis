@@ -4,6 +4,8 @@ import type { EvenementColis } from '~/types/shared'
 defineProps<{
   evenements: EvenementColis[]
 }>()
+
+const { $formatDateTime } = useNuxtApp()
 </script>
 
 <template>
@@ -44,7 +46,7 @@ defineProps<{
             :datetime="evenement.date"
             class="mt-1 block text-sm text-gray-500"
           >
-            {{ new Date(evenement.date).toLocaleString('fr-FR') }}
+            {{ $formatDateTime(evenement.date) }}
           </time>
         </div>
       </li>

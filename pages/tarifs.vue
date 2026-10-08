@@ -4,16 +4,15 @@ import type {
   TypeEnvoi
 } from '~/types/shared'
 
-// Valeurs du formulaire.
+const { $formatPrice } = useNuxtApp()
+
 const typeEnvoi = ref<TypeEnvoi>('lettre')
 const poidsG = ref<number | null>(null)
 const destination = ref<DestinationTarif>('france')
 const avecSuivi = ref(false)
 
-// Message lié à la validation côté frontend.
 const erreurValidation = ref('')
 
-// Le composable gère l’appel à POST /api/tarifs.
 const {
   resultat,
   pending,
@@ -22,10 +21,8 @@ const {
 } = useTarif()
 
 async function soumettreSimulation(): Promise<void> {
-  // Efface une ancienne erreur de validation.
   erreurValidation.value = ''
 
-  // Vérifie que le poids est renseigné et supérieur à zéro.
   if (
     poidsG.value === null
     || poidsG.value <= 0
@@ -34,7 +31,6 @@ async function soumettreSimulation(): Promise<void> {
     return
   }
 
-  // Transmet les valeurs du formulaire au composable.
   await calculerTarif({
     typeEnvoi: typeEnvoi.value,
     poidsG: poidsG.value,
@@ -192,7 +188,7 @@ async function soumettreSimulation(): Promise<void> {
 
         <div v-if="resultat">
           <p class="mt-4 text-4xl font-bold text-yellow-400">
-            {{ resultat.prix.toFixed(2) }} €
+            {{ $formatPrice(resultat.prix) }}
           </p>
 
           <p class="mt-3 text-blue-100">
