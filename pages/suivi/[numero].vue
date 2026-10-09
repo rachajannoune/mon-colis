@@ -22,6 +22,14 @@ const {
   error
 } = await useSuiviColis(numero.value)
 
+if (error.value) {
+  throw createError({
+    statusCode: error.value.statusCode || 500,
+    statusMessage: error.value.statusMessage || 'Erreur lors du suivi',
+    fatal: true
+  })
+}
+
 const { ajouterDernierColis } = useDerniersColis()
 
 watch(
@@ -57,7 +65,7 @@ watch(
       Chargement du colis...
     </div>
 
-    <div
+    <!-- <div
       v-else-if="error"
       class="rounded-xl border border-red-200 bg-red-50 p-6"
       role="alert"
@@ -76,7 +84,7 @@ watch(
       >
         Effectuer une nouvelle recherche
       </NuxtLink>
-    </div>
+    </div> -->
 
     <div
       v-else-if="colis"

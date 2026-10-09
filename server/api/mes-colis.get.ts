@@ -1,23 +1,19 @@
-import type { Colis } from '~/types/shared'
-import { getCookie } from 'h3'
+import type { Colis } from '../../types/shared'
 import colisData from '../data/colis.json'
+import { sessionEstValide } from '../utils/auth'
 import { numerosColisSuivis } from '../utils/mesColis'
 
 export default defineEventHandler((event) => {
-  const tokenSession = getCookie(event, 'session_token')
-
-  if (tokenSession !== 'mon-colis-session') {
+  if (!sessionEstValide(event)) {
     throw createError({
       statusCode: 401,
-      statusMessage: 'Non authentifié'
+      statusMessage: 'Non autorisé'
     })
   }
 
   const colis = colisData as Colis[]
 
-  const colisSuivis = colis.filter(
-    colis => numerosColisSuivis.includes(colis.numero)
+  return colis.filter((colisItem) =>
+    numerosColisSuivis.includes(colisItem.numero)
   )
-
-  return colisSuivis
 })

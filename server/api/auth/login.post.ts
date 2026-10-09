@@ -1,4 +1,5 @@
 import { setCookie } from 'h3'
+import { creerTokenSession } from '../../utils/auth'
 
 const compteTest = {
   email: 'test@moncolis.fr',
@@ -32,7 +33,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const tokenSession = 'mon-colis-session'
+  const tokenSession = creerTokenSession(event)
 
   setCookie(event, 'session_token', tokenSession, {
     maxAge: 60 * 60 * 2,

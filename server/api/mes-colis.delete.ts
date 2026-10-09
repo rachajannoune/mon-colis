@@ -1,17 +1,18 @@
-import { getCookie } from 'h3'
+import { sessionEstValide } from '../utils/auth'
 import { numerosColisSuivis } from '../utils/mesColis'
 
 export default defineEventHandler(async (event) => {
-  const tokenSession = getCookie(event, 'session_token')
-
-  if (tokenSession !== 'mon-colis-session') {
+  if (!sessionEstValide(event)) {
     throw createError({
       statusCode: 401,
-      statusMessage: 'Non authentifié'
+      statusMessage: 'Non autorisé'
     })
   }
 
-  const body = await readBody<{ numero?: string }>(event)
+  const body = await readBody<{
+    numero?: string
+  }>(event)
+
   const numero = body.numero?.trim().toUpperCase()
 
   if (!numero) {
@@ -26,7 +27,7 @@ export default defineEventHandler(async (event) => {
   if (index === -1) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Colis non suivi'
+      statusMessage: 'Ce colis n’est pas suivi'
     })
   }
 
